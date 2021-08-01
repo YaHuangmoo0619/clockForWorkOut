@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>運動數時間</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+</head>
+<body>
+	
+	<button id="start">start</button><button id="stop">stop</button>
+
+	<audio controls autoplay="true" muted="muted" id="sound">
+		<source src="C:\Users\user\Downloads\turning_a_lock.mp3" type="">
+	</audio>
+
+	<hr>
+
+	<button id="start2">start</button><button id="stop2">stop</button>
+
+	<audio controls autoplay="true" muted="muted" id="sound2">
+		<source src="C:\Users\user\Downloads\turning_a_lock.mp3" type="">
+	</audio>
+
+	<input type="number" id="second2" value=1>
+
+<script>
+	var a;
+	$("#start").click(function(){
+		a = setInterval(function(){
+			$("#sound")[0].play();
+		},1000);
+	});
+
+	$("#stop").click(function(){
+		clearInterval(a);
+	});
+
+	var b;
+	$("#start2").click(function(){
+		let s = $("#second2")[0].value;
+		b = setInterval(function(){
+			$("#sound2")[0].play();
+		},s*1000);
+	});
+
+	$("#stop2").click(function(){
+		clearInterval(b);
+	});
+</script>
+</body>
+</html>
